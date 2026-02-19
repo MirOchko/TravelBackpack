@@ -1,0 +1,82 @@
+
+body {
+    background-color: #f4f4f0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.5; /* міжрядковий інтервал */
+    margin: 20px;
+}
+
+h1,
+h2,
+h3 {
+    color: #2c3e50;
+    text-align: center;
+    font-family: 'Georgia', serif;
+}
+
+a {
+    color: #008000;
+    text-decoration: none;
+    font-weight: bold; /* жирний текст*/
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ff8c00;
+}
+
+/* використ. індефікатора (ID) */
+#footer {
+    background-color: #e5e5e1;
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 2px solid #dadad7;
+    margin-top: auto;
+}
+
+.important-text {
+    color: #ff0000 !important;
+    /* колір не можливо перебити іншим стилем */
+    font-weight: bold;
+    background-color: #ffe4e1;
+    padding: 10px;
+    border: 1px solid red;
+}
+
+ul,
+ol,
+dl {
+    background-color: #ffffff;
+    border: 1px solid #b0c4de;
+    padding: 20px 40px;
+    border-radius: 8px;
+}
+
+dt {
+    font-weight: bold;
+    color: #4b0082;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse; /* прибирає подвійні рамки */
+    background-color: #ffffff;
+}
+
+th,
+td {
+    border: 2px solid #cbb5a2;
+    padding: 12px;
+    text-align: center;
+}
+
+/* унікальне для 2 таблиці */
+th {
+    background-color: #ffcccb;
+    color: #333;
+    font-size: 18px;
+}

@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Чек лист</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body bgcolor="#e6e6fa">
+  <body>
     <h1>Списки мандрівника</h1>
+
     <h3>1. Нумерований список (тип римські цифри)</h3>
     <ol type="I">
       <li>Закордонний паспорт</li>
@@ -23,20 +25,20 @@
 
     <h3>3. Список визначень (dl)</h3>
     <dl>
-      <dt><b>Check-in</b></dt>
+      <dt>Check-in</dt>
       <dd>Процес реєстрації в готелі або аеропорту.</dd>
-      <dt><b>Gate</b></dt>
+      <dt>Gate</dt>
       <dd>Вихід на посадку в літак.</dd>
     </dl>
 
     <hr />
 
     <h2>Таблиця 1: Спорядження</h2>
-    <table border="1" width="50%">
+    <table>
       <caption>
         Список речей
       </caption>
-      <tr bgcolor="#ffcccb">
+      <tr>
         <th>Паспорт</th>
         <th>Квиток</th>
         <th>Камера</th>
@@ -72,13 +74,11 @@
     <br />
 
     <h2 id="complex-table">Таблиця 2: Бюджет</h2>
-
-    <table border="1" cellpadding="10" cellspacing="5" width="80%">
+    <table>
       <colgroup>
         <col span="1" style="background-color: #ffe4b5" />
         <col span="2" style="background-color: #f0fff0" />
       </colgroup>
-
       <tr>
         <th rowspan="2">Категорія витрат</th>
         <th colspan="2">Сума</th>
@@ -87,23 +87,23 @@
         <th>План (€)</th>
         <th>Факт (€)</th>
       </tr>
-      <tr align="center">
+      <tr>
         <td>Квитки</td>
         <td>200</td>
         <td>210</td>
       </tr>
-      <tr align="right">
+      <tr>
         <td>Готель</td>
         <td>300</td>
         <td>290</td>
       </tr>
       <tr>
-        <td><b>Всього</b></td>
-        <td colspan="2" align="center"><b>500 Євро</b></td>
+        <td class="important-text">Всього</td>
+        <td colspan="2"><b>500 Євро</b></td>
       </tr>
     </table>
 
-    <br /><br /><br />
+    <br /><br />
     <a href="index.html">На головну сторінку</a>
   </body>
 </html>
