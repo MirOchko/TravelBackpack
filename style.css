@@ -86,7 +86,7 @@ th {
 /* 1. СУСІДНІЙ селектор (знак +) */
 /* Фарбує ТІЛЬКИ перший абзац, який йде одразу після заголовка h2 */
 h2+p {
-    background-color: #ffebcd;
+    background-color: #dfd6ca;
     font-weight: bold;
     padding: 10px;
 }
@@ -103,4 +103,99 @@ h2+p {
 /* Змінює колір тексту для ВСІХ абзаців <p> всередині блоку .advice-section, навіть якщо вони глибоко сховані */
 .advice-section p {
     color: #00008b;
+}
+
+
+/* === лабораторна 5 === */
+
+/* 1. блочні елементи та відносне позиціонування */
+.lab5-container {
+    position: relative;
+    /* щоб абсолютний блок орієнтувався по цьому контейнеру */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 2px solid #ccc;
+    margin: 20px 0;
+}
+
+/* 2. рядковий елемент (span) */
+.lab5-container span {
+    background-color: #ffff00;
+    font-weight: bold;
+    color: #d35400;
+}
+
+/* 3. плаваючий блок (float) */
+.floating-box {
+    float: right;
+    /* блок притискається до правого краю */
+    width: 40%;
+    background-color: #e0f7fa;
+    border: 1px solid #00acc1;
+    padding: 10px;
+}
+
+/* звичайний блок для контрасту */
+.info-box {
+    border: 1px dashed #7f8c8d;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+/* 4. абсолютне позиціонування (position) */
+.absolute-badge {
+    position: absolute;
+    /* виривається зі звичайного потоку документа */
+    top: -15px;
+    /* вилазить трохи вгору за межі контейнера */
+    right: 20px;
+    /* відступ справа */
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+/* 5. псевдокласи для посилань (:link, :visited, :hover, :active) */
+a.lab5-link:link {
+    color: blue;
+    text-decoration: none;
+}
+
+/* не відвідане */
+a.lab5-link:visited {
+    color: purple;
+}
+
+/* відвідане */
+a.lab5-link:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+/* при наведенні миші */
+a.lab5-link:active {
+    color: red;
+}
+
+/* у момент кліку */
+
+/* 6. псевдоклас :first-child */
+/* фарбує текст лише в першому абзаці всередині .info-box */
+.info-box p:first-child {
+    font-size: 18px;
+    border-left: 3px solid green;
+    padding-left: 5px;
+}
+
+/* 7. псевдоелементи :before та :after */
+/* додають контент перед і після заголовка (без зміни html) */
+.magic-title:before {
+    content: " * ";
+}
+
+.magic-title:after {
+    content: "  * ";
 }
