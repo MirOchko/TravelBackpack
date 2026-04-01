@@ -76,6 +76,80 @@
         </p>
       </div>
 
+      <div
+        class="lab6-container"
+        style="
+          padding: 20px;
+          border: 2px solid #2ecc71;
+          margin: 20px 0;
+          border-radius: 10px;
+        "
+      >
+        <h2>Інтерактивний помічник мандрівника</h2>
+
+        <script>
+          // document.write виводить текст під час завантаження сторінки
+          document.write(
+            "<p style='color: gray;'><i>Порада дня: завжди беріть на 2 пари шкарпеток більше, ніж планували.</i></p>"
+          );
+        </script>
+
+        <div
+          style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px"
+        >
+          <button onclick="checkReadiness()">Перевірка готовності</button>
+          <button onclick="planTrip()">Спланувати дні</button>
+          <button onclick="showDeveloperInfo('Лутай', 'Міра')">
+            Хто автор гайду?
+          </button>
+          <button onclick="compareBackpacks('Намет', 'Спальний мішок')">
+            Що довше?
+          </button>
+          <button onclick="nightMode()">Нічний режим</button>
+          <button onclick="buyTickets()">Купити квитки</button>
+          <button onclick="packBackpack()">Спакувати рюкзак</button>
+        </div>
+
+        <hr />
+
+        <h3>Вміст вашого рюкзака:</h3>
+        <p id="main-pocket">Головне відділення зараз порожнє.</p>
+
+        <ul class="travel-list">
+          <li>Документи</li>
+          <li>Гроші</li>
+        </ul>
+
+        <div
+          id="side-pocket"
+          style="background: #ecf0f1; padding: 15px; border-radius: 5px"
+        >
+          Тут лежать дрібниці.
+          <span id="heavy-item">Важкий фен.</span>
+          <span id="lost-item">Забуті ключі.</span>
+        </div>
+      </div>
+
+      <script>
+        function checkReadiness() {
+          alert("Вітаємо в системі підготовки до походу!");
+          let destination = prompt("Куди плануєте поїхати?", "Карпати");
+
+          if (destination) {
+            let isReady = confirm(
+              `Ваша мета: ${destination}. Ви готові почати збори?`
+            );
+            if (isReady) {
+              alert("Чудово! Переходьте до наступних кроків.");
+            } else {
+              alert("Нічого, час на підготовку ще є.");
+            }
+          }
+        }
+      </script>
+
+      <script src="script.js"></script>
+
       <div class="info-box floating-box">
         <p>
           <strong>Лайфхак:</strong> використовуйте вакуумні пакети для одягу. Це

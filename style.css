@@ -83,24 +83,25 @@ th {
 
 /* === ЛАБОРАТОРНА 4 === */
 
-/* 1. СУСІДНІЙ селектор (знак +) */
-/* Фарбує ТІЛЬКИ перший абзац, який йде одразу після заголовка h2 */
+/* 1. СУСІДНІЙ селектор */
 h2+p {
     background-color: #dfd6ca;
     font-weight: bold;
     padding: 10px;
 }
 
-/* 2. ДОЧІРНІЙ селектор (знак >) */
-/* Робить зелену рамку ТІЛЬКИ для прямих нащадків (li) списку .packing-list */
+/* 2. ДОЧІРНІЙ селектор */
 .packing-list>li {
     border: 1px dashed #4CAF50;
     margin-bottom: 5px;
     padding: 8px;
 }
 
-/* 3. КОНТЕКСТНИЙ селектор (пробіл) */
-/* Змінює колір тексту для ВСІХ абзаців <p> всередині блоку .advice-section, навіть якщо вони глибоко сховані */
+/* 3. КОНТЕКСТНИЙ селектор */
+.advice-section>p {
+    color: #ea570e;
+}
+/* 3. КОНТЕКСТНИЙ селектор */
 .advice-section p {
     color: #00008b;
 }
@@ -111,7 +112,6 @@ h2+p {
 /* 1. блочні елементи та відносне позиціонування */
 .lab5-container {
     position: relative;
-    /* щоб абсолютний блок орієнтувався по цьому контейнеру */
     background-color: #f9f9f9;
     padding: 20px;
     border: 2px solid #ccc;
@@ -128,7 +128,6 @@ h2+p {
 /* 3. плаваючий блок (float) */
 .floating-box {
     float: right;
-    /* блок притискається до правого краю */
     width: 40%;
     background-color: #e0f7fa;
     border: 1px solid #00acc1;
@@ -146,11 +145,8 @@ h2+p {
 /* 4. абсолютне позиціонування (position) */
 .absolute-badge {
     position: absolute;
-    /* виривається зі звичайного потоку документа */
     top: -15px;
-    /* вилазить трохи вгору за межі контейнера */
     right: 20px;
-    /* відступ справа */
     background-color: #e74c3c;
     color: white;
     padding: 5px 15px;
@@ -160,7 +156,7 @@ h2+p {
 
 /* 5. псевдокласи для посилань (:link, :visited, :hover, :active) */
 a.lab5-link:link {
-    color: blue;
+    color: rgb(94, 94, 152);
     text-decoration: none;
 }
 
@@ -183,15 +179,13 @@ a.lab5-link:active {
 /* у момент кліку */
 
 /* 6. псевдоклас :first-child */
-/* фарбує текст лише в першому абзаці всередині .info-box */
 .info-box p:first-child {
     font-size: 18px;
-    border-left: 3px solid green;
+    border-left: 3px solid rgb(5, 105, 5);
     padding-left: 5px;
 }
 
 /* 7. псевдоелементи :before та :after */
-/* додають контент перед і після заголовка (без зміни html) */
 .magic-title:before {
     content: " * ";
 }
