@@ -201,3 +201,12 @@ a.lab5-link:active {
     color: #000 !important;
     font-weight: bold !important;
 }
+
+/* стилі для 8 лаби: підсвічування при наведенні миші (mouseover) */
+.hover-active {
+    background-color: #2ecc71 !important;
+    color: white;
+    transform: scale(1.1);
+    /* трохи збільшуємо об'єкт */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

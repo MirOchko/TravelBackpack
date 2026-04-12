@@ -93,3 +93,79 @@ document.addEventListener("click", function(event) {
         span.textContent++; 
     }
 });
+
+// ==========================================
+// === лабораторна робота 8 (події миші) ===
+// ==========================================
+
+// --- завдання 1: mouseover та mouseout ---
+
+let hoverZone = document.getElementById("hover-zone");
+
+// шпаргалка: mouseover спрацьовує, коли курсор ЗАХОДИТЬ на елемент
+hoverZone.addEventListener("mouseover", function(event) {
+    // перевіряємо, чи мишка наведена саме на річ (клас hover-item)
+    if (event.target.classList.contains("hover-item")) {
+        // event.target - це елемент, НА який щойно зайшла мишка
+        // event.relatedtarget - це елемент, З якого мишка прийшла (викладачі часто про це питають)
+        
+        // додаємо клас, який змінює стиль (робить зеленим і збільшує)
+        event.target.classList.add("hover-active");
+    }
+});
+
+// шпаргалка: mouseout спрацьовує, коли курсор ЙДЕ з елемента
+hoverZone.addEventListener("mouseout", function(event) {
+    if (event.target.classList.contains("hover-item")) {
+        // прибираємо клас, щоб елемент повернувся до звичайного стану
+        event.target.classList.remove("hover-active");
+    }
+});
+
+
+// --- завдання 2: drag-and-drop (перетягування) ---
+
+let dragItem = document.getElementById("drag-item");
+
+// шпаргалка: mousedown спрацьовує, коли ми затискаємо кнопку миші
+dragItem.addEventListener("mousedown", function(event) {
+    dragItem.style.cursor = "grabbing";
+
+    // обчислюємо зсув (де саме всередині компаса ми клацнули)
+    let shiftX = event.clientX - dragItem.getBoundingClientRect().left;
+    let shiftY = event.clientY - dragItem.getBoundingClientRect().top;
+
+    // знаходимо батьківський блок (сіру зону), щоб компас не відлітав за екран
+    let container = dragItem.parentElement;
+
+    function moveAt(clientX, clientY) {
+        // отримуємо координати сірої зони відносно екрана
+        let containerRect = container.getBoundingClientRect();
+
+        // вираховуємо нову позицію компаса ВІДНОСНО його коробки
+        let newLeft = clientX - containerRect.left - shiftX;
+        let newTop = clientY - containerRect.top - shiftY;
+
+        // рухаємо елемент
+        dragItem.style.left = newLeft + 'px';
+        dragItem.style.top = newTop + 'px';
+    }
+
+    // шпаргалка: mousemove рухає елемент за мишкою
+    function onMouseMove(event) {
+        moveAt(event.clientX, event.clientY);
+    }
+
+    document.addEventListener("mousemove", onMouseMove);
+
+    // шпаргалка: mouseup відпускає елемент
+    document.addEventListener("mouseup", function onMouseUp() {
+        document.removeEventListener("mousemove", onMouseMove);
+        document.removeEventListener("mouseup", onMouseUp);
+        dragItem.style.cursor = "grab";
+    });
+});
+
+dragItem.ondragstart = function() {
+    return false;
+};
