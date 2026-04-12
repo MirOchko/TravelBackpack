@@ -1,4 +1,4 @@
-// === зовнішній скрипт для лабораторної 6 ===
+// === для лабораторної 6 ===
 
 // функція з циклом та умовою (діалог з користувачем)
 function planTrip() {
@@ -38,7 +38,7 @@ function nightMode() {
     let oldColor = document.body.style.backgroundColor;
     let oldTextColor = document.body.style.color;
 
-    document.body.style.backgroundColor = "#1a1a2e"; // дуже темний синій
+    document.body.style.backgroundColor = "#1a1a2e"; 
     document.body.style.color = "#ecf0f1"; 
     
     // 2. знаходимо ВСІ світлі елементи: контейнери, підвал (#footer) та рамку списку (.travel-list)

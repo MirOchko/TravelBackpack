@@ -193,3 +193,11 @@ a.lab5-link:active {
 .magic-title:after {
     content: "  * ";
 }
+
+/* Клас для підсвічування обраного міста */
+.highlight-place {
+    background-color: #f1c40f !important;
+    border-left-color: #e67e22 !important;
+    color: #000 !important;
+    font-weight: bold !important;
+}

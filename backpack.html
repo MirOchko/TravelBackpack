@@ -3,32 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Мій Рюкзак</title>
+    <title>Карта та Маршрути</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body background="https://www.transparenttextures.com/patterns/cubes.png">
-    <h1>Збираємо речі</h1>
+    <h1>Моя інтерактивна карта</h1>
 
     <div class="advice-section">
-      <h2>Правила пакування</h2>
+      <h2>Правила на маршруті</h2>
 
-      <p>Перше правило: бери лише найнеобхідніше.</p>
+      <p>Перше правило: завжди май при собі заряджений телефон і паперову мапу.</p>
 
-      <p>Друге правило: важкі речі клади на дно рюкзака.</p>
+      <p>Друге правило: не сходь з маркованих стежок.</p>
 
       <ul class="packing-list">
         <li>
-          Одяг:
-          <p>Скручуй футболки в рулони, щоб зекономити місце.</p>
+          Орієнтування:
+          <p>Слідкуй за вказівниками та користуйся компасом.</p>
         </li>
-        <li>Взуття</li>
-        <li>Аптечка</li>
+        <li>Безпека</li>
+        <li>Зв'язок</li>
       </ul>
     </div>
 
     <p class="important-text">
-      УВАГА: Не забудь перевірити всі документи перед виїздом!
+      УВАГА: Не забудь перевірити погоду перед виїздом на маршрут!
     </p>
     <a href="index.html">На головну сторінку</a>
+    <div
+      class="lab7-container"
+      style="
+        padding: 20px;
+        border: 2px solid #8e44ad;
+        margin: 20px 0;
+        border-radius: 10px;
+        background: white;
+      "
+    >
+      <h2>Взаємодія з картою</h2>
+
+      <h3>1. Базові дії</h3>
+      <div
+        style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px"
+      >
+        <button onclick="attributeHandler()">Встановити намет</button>
+        <button id="prop-btn">Розпалити вогнище</button>
+        <button id="multi-btn">Подивитись в бінокль</button>
+      </div>
+
+      <div style="margin-bottom: 20px; padding: 10px; background: #f39c12; border-radius: 5px;">
+        <button id="obj-btn">🧭 Використати компас</button>
+        <button id="remove-obj-btn">Вимкнути компас</button>
+      </div>
+      </div>
+
+      <hr />
+
+      <h3>2. Маршрут подорожі</h3>
+      <p style="font-size: 14px; color: gray">
+        Клікни на будь-яке місто, щоб відмітити його.
+      </p>
+      <ul id="places-list" class="travel-list" style="cursor: pointer">
+        <li>📍 Говерла</li>
+        <li>📍 Озеро Синевир</li>
+        <li>📍 Хотинська фортеця</li>
+        <li>📍 Оптимістична печера</li>
+      </ul>
+
+      <hr />
+
+      <h3>3. Панель керування</h3>
+      <div id="travel-menu" style="display: flex; gap: 10px">
+        <button data-action="save">Зберегти маршрут</button>
+        <button data-action="load">Завантажити маршрут</button>
+        <button data-action="clear">Очистити карту</button>
+      </div>
+
+      <hr />
+
+      <h3>4. Розумний крокомір</h3>
+      <button data-counter style="padding: 10px; font-size: 16px">
+        Кроків зроблено: <span>0</span>
+      </button>
+      <button data-counter style="padding: 10px; font-size: 16px">
+        Зроблено фотографій: <span>0</span>
+      </button>
+    </div>
+    <br />
+     <a href="index.html">На головну сторінку</a>
+
+    <script src="backpack.js"></script>
   </body>
 </html>
